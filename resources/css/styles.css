@@ -1,0 +1,42 @@
+#info {
+    font-size: 14px;
+	color: red;
+}
+#div_start {
+    float: right;
+}
+
+#results {
+    font-size: 14px;
+	font-weight:bold;
+    font-family:  Georgia, Times, Palatino;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 65px;
+	background-color:white;
+	margin-top:-20px;
+	margin-bottom: 5px;
+	
+}
+#start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 10px;
+	vertical-align: bottom;
+}
+.interim {
+    color: gray;
+}
+.final {
+    color: black;
+    padding-right: 3px;
+}
+
+a.c1 {font-weight: normal;}
+
+.navbar {
+    background-color: #000000;
+    height: 65px;
+    color: #ffffff;
+}

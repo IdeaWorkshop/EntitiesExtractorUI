@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Idea Workshop</title>
+
+    <style>
+        table, th, td {
+            margin: 10px 0;
+            border: solid 1px #333;
+            padding: 2px 4px;
+            font: 13px Verdana;
+        }
+
+        th {
+            font-weight: bold;
+        }
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+
+    <!-- Demo Dependencies -->
+    <script src="resources/js/jquery.min.js" type="text/javascript"/></script>
+    <script src="resources/js//bootstrap.min.js"></script>
+    <script src="resources/js/holder.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="resources/js/highcharts.js"></script>
+    <script type="text/javascript" src="resources/js/exporting.js"></script>
+    <script type="text/javascript" src="resources/js/requestProcessor.js"></script>
+	<link href="resources/css//bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Dashboard Starter Kit -->
+    <link rel="stylesheet" type="text/css" href="resources/css/keen-dashboards.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+</head>
+<body class="keen-dashboard" style="padding-top: 80px;">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img src="resources/img/logo.png" height="45"/>
+            </a>
+            <!--
+            <a class="navbar-brand" style="margin-top: 15px;margin-left: -5px; color:#" href="./">Advertisement Analytics</a>
+            -->
+        </div>
+
+        <!--
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+
+                <li><a href="https://keen.io">Home</a></li>
+                <li><a href="https://keen.io/team">Team</a></li>
+                <li><a href="https://github.com/keenlabs/dashboards/tree/gh-pages/layouts/hero-sidebar">Source</a></li>
+                <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li>
+                <li><a href="http://stackoverflow.com/questions/tagged/keen-io?sort=newest&pageSize=15">Technical Support</a></li>
+
+            </ul>
+        </div>
+        -->
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-14">
+            <div class="chart-stage">
+                <div id="info">
+                    <p id="info_no_speech" style="display:none">
+                        No speech was detected.
+                    </p>
+                    <p id="info_no_microphone" style="display:none">
+                        No microphone was found.
+                    </p>
+
+                    <p id="info_denied" style="display:none">
+                        Permission to use microphone was denied.
+                    </p>
+                    <p id="info_blocked" style="display:none">
+                        Permission to use microphone is blocked. To change, go to
+                        chrome://settings/contentExceptions#media-stream
+                    </p>
+                    <p id="info_upgrade" style="display:none">
+                        Web Speech API is not supported by this browser. Upgrade to
+                        <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
+                    </p>
+                </div>
+                <div class="compact marquee">
+                    <div id="div_start">
+                        <button id="start_button" onclick="startButton(event)">
+                            &nbsp;
+                            <img alt="Start" id="start_img" src="resources/img/mic.gif">
+                        </button>
+                    </div>
+                    <div id="results">
+            <span class="final" id="final_span">
+            </span>
+                        <span class="interim" id="interim_span">
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="chart-wrapper">
+            <div class="chart-title">
+                Search Result
+            </div>
+            <div id="showData" class="chart-stage" style="min-height: 600px">
+                <!--<img data-src="holder.js/100%x650/white">-->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Analysis Details
+                </div>
+                <div class="chart-stage" style="min-height: 600px">
+                    <div id="showTables" class="chart-stage">
+                        <!--
+                      <img data-src="holder.js/100%x650/white">-->
+                    </div>
+                    <div class="col-sm-6" id="graphcontainer1"></div>
+                    <div class="col-sm-6" id="graphcontainer2"></div>
+                    <div class="col-sm-6" id="graphcontainer3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    //Holder.add_theme("white", {background: "#fff", foreground: "#a7a7a7", size: 10});
+    $(document).ready(function () {
+        $('body').on('click', '#selectAll', function () {
+            if ($(this).hasClass('allChecked')) {
+                $('input[type="checkbox"]').prop('checked', false);
+            } else {
+                $('input[type="checkbox"]').prop('checked', true);
+            }
+            $(this).toggleClass('allChecked');
+        })
+    });
+
+</script>
+<script src="resources/js/Chrome.js"></script>
+<script src="resources/js/SpeechRecognizer.js"></script>
+
+</body>
+</html>
